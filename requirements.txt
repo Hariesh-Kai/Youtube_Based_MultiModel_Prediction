@@ -1,0 +1,13 @@
+streamlit
+tensorflow
+numpy
+pillow
+google-api-python-client
+pyspellchecker
+yt-dlp
+isodate
+spotipy
+certifi
+matplotlib 
+scikit-learn
+opencv-python
