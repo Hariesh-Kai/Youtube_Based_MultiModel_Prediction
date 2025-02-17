@@ -1,6 +1,3 @@
-Here’s your README in Markdown format:
-
-```markdown
 # Emotion and Environment-Based Music Recommendation System
 
 ## Project Overview
