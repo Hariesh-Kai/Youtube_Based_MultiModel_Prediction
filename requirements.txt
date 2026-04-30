@@ -11,3 +11,6 @@ certifi
 matplotlib 
 scikit-learn
 opencv-python
+fastapi
+uvicorn
+python-multipart
