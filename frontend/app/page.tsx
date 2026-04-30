@@ -10,27 +10,21 @@ export default function HomePage() {
   const [file, setFile] = useState<File | null>(null)
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-white">
       <Header />
-      <main className="mx-auto w-full max-w-3xl px-4 py-16 sm:py-20">
-        <section className="mx-auto max-w-xl text-center">
-          <h2 className="text-3xl font-semibold tracking-tight text-slate-900">AI Mood Engine</h2>
-          <p className="mt-3 text-sm text-slate-600">Upload an image to generate atmosphere</p>
-        </section>
-
-        <section className="mx-auto mt-10 w-full max-w-xl">
+      <main className="mx-auto flex max-w-3xl flex-col items-center px-4 py-16">
+        <h1 className="text-3xl font-semibold text-slate-900">AI Mood Engine</h1>
+        <p className="mt-2 text-sm text-slate-500">Upload an image to generate atmosphere</p>
+        <div className="mt-8 w-full max-w-xl">
           <UploadBox onFileSelect={setFile} fileName={file?.name} />
-        </section>
-
-        <section className="mx-auto mt-8 flex w-full max-w-xl justify-center">
-          <button
-            disabled={!file}
-            onClick={() => router.push('/result')}
-            className="rounded-xl bg-blue-600 px-6 py-3 text-sm font-medium text-white transition-opacity disabled:cursor-not-allowed disabled:opacity-40"
-          >
-            Analyze Mood
-          </button>
-        </section>
+        </div>
+        <button
+          disabled={!file}
+          onClick={() => router.push('/result')}
+          className="mt-6 rounded-xl bg-accent px-6 py-3 text-sm font-medium text-white disabled:cursor-not-allowed disabled:opacity-50"
+        >
+          Analyze Mood
+        </button>
       </main>
     </div>
   )

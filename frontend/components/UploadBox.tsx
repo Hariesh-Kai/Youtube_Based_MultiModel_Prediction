@@ -7,7 +7,7 @@ type Props = {
 
 export default function UploadBox({ onFileSelect, fileName }: Props) {
   return (
-    <label className="block cursor-pointer rounded-2xl border border-dashed border-slate-300 bg-white px-6 py-10 text-center">
+    <label className="block cursor-pointer rounded-2xl border border-dashed border-slate-300 bg-surface p-8 text-center">
       <input
         type="file"
         accept="image/png,image/jpeg,image/jpg"
@@ -18,7 +18,7 @@ export default function UploadBox({ onFileSelect, fileName }: Props) {
         }}
       />
       <p className="text-sm text-slate-500">Drag & drop an image, or click to upload</p>
-      {fileName && <p className="mt-3 text-sm font-medium text-slate-800">{fileName}</p>}
+      {fileName && <p className="mt-2 text-sm font-medium text-slate-700">{fileName}</p>}
     </label>
   )
 }

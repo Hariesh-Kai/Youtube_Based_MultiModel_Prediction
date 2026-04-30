@@ -7,13 +7,11 @@ type Props = {
 
 export default function Header({ title = 'AI Mood Engine', showBack = false }: Props) {
   return (
-    <header className="border-b border-slate-200 bg-white">
-      <div className="mx-auto flex h-16 w-full max-w-3xl items-center justify-between px-4">
-        <div className="w-20 text-left text-sm text-slate-600">
-          {showBack ? <Link href="/">Back</Link> : <span className="font-medium text-slate-900">{title}</span>}
-        </div>
-        <h1 className="text-sm font-semibold text-slate-900">{showBack ? title : ''}</h1>
-        <button aria-label="settings" className="w-20 text-right text-sm text-slate-500">Settings</button>
+    <header className="w-full border-b border-slate-200 bg-white">
+      <div className="mx-auto flex h-14 max-w-3xl items-center justify-between px-4">
+        {showBack ? <Link href="/" className="text-sm text-slate-600">← Back</Link> : <span className="text-sm font-medium">{title}</span>}
+        <span className="text-sm font-medium">{showBack ? title : ''}</span>
+        <button className="text-slate-500" aria-label="settings">⚙︎</button>
       </div>
     </header>
   )
