@@ -1,28 +1,32 @@
-:root { font-family: Inter, sans-serif; color: #e2e8f0; background: #0b1020; }
-* { box-sizing: border-box; }
-body { margin: 0; background: radial-gradient(circle at top, #182033, #090d1a 60%); }
-.app-shell { min-height: 100vh; display: grid; grid-template-rows: auto 1fr auto; }
-.topbar { padding: 1rem; border-bottom: 1px solid #1f2937; background: rgba(10,15,30,0.85); position: sticky; top: 0; }
-.topbar h1 { margin: 0; font-size: 1.2rem; }
-.topbar p { margin: .25rem 0 0; color: #94a3b8; }
-.page-content { max-width: 960px; width: 100%; margin: 0 auto; padding: 1rem; }
-.card { background: #101827; border: 1px solid #1e293b; border-radius: 16px; padding: 1rem; margin-bottom: 1rem; }
-.hero { text-align: center; padding: 2rem 1rem; }
-.actions { display: flex; justify-content: center; gap: .75rem; margin-top: 1rem; }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap: .75rem; margin-top: .75rem; }
-input, select, button, .primary, .secondary { border-radius: 12px; border: 1px solid #334155; background: #0f172a; color: #e2e8f0; padding: .6rem .8rem; text-decoration: none; }
-.primary { background: linear-gradient(90deg, #2563eb, #7c3aed); border: none; }
-.secondary { background: #1e293b; }
-.preview { width: 100%; max-height: 280px; object-fit: cover; margin-top: .8rem; border-radius: 12px; }
-.language-list { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .75rem; }
-.chip.active { border-color: #22c55e; color: #22c55e; }
-.songs { list-style: none; padding: 0; }
-.songs li { padding: .65rem 0; border-top: 1px solid #1f2937; display: flex; justify-content: space-between; gap: 1rem; }
-.tabbar { display: grid; grid-template-columns: repeat(4,1fr); gap: .5rem; padding: .75rem; background: rgba(10,15,30,.95); border-top: 1px solid #1f2937; position: sticky; bottom: 0; }
-.tab { text-align: center; padding: .55rem; border: 1px solid #334155; border-radius: 10px; color: #cbd5e1; text-decoration: none; }
-.tab.active { color: #60a5fa; border-color: #60a5fa; }
-.library-item { border-top: 1px solid #1f2937; padding: .6rem 0; }
+:root {
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  color: #e5e7eb;
+  background: #0b1020;
+}
+body { margin: 0; background: linear-gradient(180deg, #0b1020, #111827); }
+.container { max-width: 980px; margin: 0 auto; padding: 1rem 1rem 5rem; }
+.header-row { display: flex; justify-content: space-between; align-items: center; gap: 0.8rem; }
+.card { background: #111827; border: 1px solid #1f2937; border-radius: 12px; padding: 1rem; margin-top: 1rem; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.75rem; }
+label, .label { display: flex; flex-direction: column; gap: 0.35rem; font-size: 0.9rem; }
+input, select, button { border-radius: 10px; border: 1px solid #374151; background: #0f172a; color: #e5e7eb; padding: 0.65rem 0.8rem; }
+.primary { background: #2563eb; border-color: #2563eb; cursor: pointer; }
+.primary:disabled { opacity: 0.5; cursor: not-allowed; }
+.preview { margin-top: 0.75rem; max-width: 100%; border-radius: 10px; }
 .muted { color: #94a3b8; }
-.error { color: #fca5a5; }
-.suggestion { color: #cbd5e1; }
-@media (max-width: 640px) { .songs li { flex-direction: column; } .actions { flex-direction: column; } }
+.language-list { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.chip.active { border-color: #10b981; color: #10b981; }
+.songs { list-style: none; padding: 0; margin-top: 1rem; }
+.songs li { display: flex; justify-content: space-between; border-top: 1px solid #1f2937; padding: 0.6rem 0; gap: 1rem; }
+.error { color: #fca5a5; margin-top: 0.75rem; }
+.secondary { margin-right: 0.75rem; background: #334155; }
+.suggestion { margin-top: 0.75rem; color: #cbd5e1; line-height: 1.5; }
+.mobile-nav { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; margin-top: 1rem; }
+.nav-btn.active { border-color: #60a5fa; color: #60a5fa; }
+.history-list { display: grid; gap: 0.5rem; }
+.history-item { text-align: left; display: flex; flex-direction: column; gap: 0.2rem; }
+@media (max-width: 640px) {
+  .container { padding: 0.7rem 0.7rem 4rem; }
+  .header-row { flex-direction: column; align-items: flex-start; }
+  .songs li { flex-direction: column; }
+}
