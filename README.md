@@ -117,3 +117,37 @@ This project is licensed under the MIT License.
 ```
 
 This is ready to be pasted into the README.md file on your GitHub repository.
+
+
+## New Frontend (Vite + React)
+A new frontend scaffold is available in `frontend/` to replace the Streamlit-first UI.
+
+### Run frontend
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+### Run backend (FastAPI)
+```bash
+pip install -r requirements.txt
+uvicorn backend_main:app --reload --host 0.0.0.0 --port 8000
+```
+
+### Connect frontend to backend
+By default frontend uses `http://127.0.0.1:8000`. To override:
+```bash
+cd frontend
+VITE_API_BASE_URL=http://localhost:8000 npm run dev
+```
+
+
+This frontend currently provides a production-style UI shell (upload, preferences, recommendations list) and is ready to be connected to a Python/FastAPI backend for live model inference.
+
+
+### LLM Suggestor (optional)
+The backend exposes `POST /suggest` for an LLM-generated playlist suggestion.
+- Set `OPENAI_API_KEY` to enable OpenAI responses.
+- Optional: set `OPENAI_MODEL` (default: `gpt-4o-mini`).
+- If no API key is present, backend automatically falls back to a deterministic local suggestion.
